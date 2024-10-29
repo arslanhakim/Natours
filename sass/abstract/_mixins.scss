@@ -12,3 +12,55 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+//MEDIA QUERY MANAGER
+/*
+0 - 600:   Phone
+600 - 900px Table portrait 
+900 - 1200:  Table landscape
+1200 - 1800: is where our nornmal styles apply
+1800px + :  Big desktop
+
+
+
+$breakpoint argument choices:
+- phone
+- tab-port
+- tab-land
+-big-desktop
+
+- As rem doesn't work good in media queries, we'll use ems here
+- Here, rem or em are always the same coming from browser ie 16px 
+  - rems will not be sey equal to as we have set it the base component
+
+How we'll write media queries to handle changes needs to handle
+Order: base + typography > general layout + grid > page layout > components
+
+*/
+
+@mixin respond($breakpoint) {
+  @if $breakpoint(phone) {
+    @media (max-width: 37.5em) {
+      //600px
+      @content;
+    }
+  }
+  @if $breakpoint(tab-port) {
+    @media (max-width: 56.25em) {
+      //900px
+      @content;
+    }
+  }
+  @if $breakpoint(tab-land) {
+    @media (max-width: 75em) {
+      // 1200px
+      @content;
+    }
+  }
+  @if $breakpoint(big-desktop) {
+    @media (max-width: 112.5em) {
+      //1800px
+      @content;
+    }
+  }
+}
