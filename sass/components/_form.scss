@@ -80,6 +80,12 @@
     left: 0;
     top: -0.4rem;
 
+    @include respond(phone-small) {
+      height: 2rem;
+      width: 2rem;
+      top: -0rem;
+    }
+
     &::after {
       content: "";
       display: block;

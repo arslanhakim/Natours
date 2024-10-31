@@ -19,10 +19,14 @@
     @include respond(tab-port) {
       top: 4rem;
       right: 4rem;
+      height: 5rem;
+      width: 5rem;
     }
-    @include respond(phone) {
+    @include respond(phone-small) {
       top: 3rem;
-      right: 3rem;
+      right: 2.5rem;
+      height: 4rem;
+      width: 4rem;
     }
   }
 
@@ -43,10 +47,14 @@
     @include respond(tab-port) {
       top: 4.5rem;
       right: 4.5rem;
+      height: 4rem;
+      width: 4rem;
     }
-    @include respond(phone) {
+    @include respond(phone-small) {
       top: 3.5rem;
-      right: 3.5rem;
+      right: 2.5rem;
+      height: 3rem;
+      width: 3rem;
     }
   }
 
@@ -95,6 +103,10 @@
       background-size: 220%;
       transition: all 0.4s;
 
+      @include respond(phone-small) {
+        font-size: 2rem;
+      }
+
       span {
         margin-right: 1.5rem;
         display: inline-block;
@@ -123,6 +135,12 @@
   &__icon {
     position: relative;
     margin-top: 3.5rem;
+    @include respond(tab-port) {
+      margin-top: 2.5rem;
+    }
+    @include respond(phone-small) {
+      margin-top: 2rem;
+    }
 
     &,
     &::before,

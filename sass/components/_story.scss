@@ -16,6 +16,9 @@
   }
   @include respond(phone) {
     transform: skewX(0);
+    width: 100%;
+    padding: 4rem;
+    font-size: 1.3rem;
   }
 
   &__shape {
@@ -35,6 +38,8 @@
 
     @include respond(phone) {
       transform: translateX(-3rem) skewX(0);
+      width: 12rem;
+      height: 12rem;
     }
   }
 
@@ -45,9 +50,20 @@
     transition: all 0.5s;
   }
 
+  &__heading-main {
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto !important;
+  }
+
   &__text {
     transform: skewX(12deg);
 
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
     @include respond(phone) {
       transform: skewX(0);
     }
