@@ -65,7 +65,12 @@
           <span class="heading-primary--sub">is where life happens</span>
         </h1>
 
-        <a href="#" class="btn btn--white btn--animated">Discover our tours</a>
+        <a
+          href="#tours"
+          class="btn btn--white btn--animated"
+          id="discover-tours-button"
+          >Discover our tours</a
+        >
       </div>
     </header>
 
@@ -281,7 +286,9 @@
         </div>
 
         <div class="u-center-text u-margin-top-huge">
-          <a href="#" class="btn btn--green">Discover all tours</a>
+          <a href="#tours" class="btn btn--green discover-tours-button"
+            >Discover all tours</a
+          >
         </div>
       </section>
 
@@ -358,7 +365,7 @@
 
       <!-- Booking Section  -->
 
-      <section id="booking" class="section-book">
+      <section id="book" class="section-book">
         <div class="row">
           <div class="book">
             <div class="book__form">
@@ -504,5 +511,35 @@
         </div>
       </div>
     </div>
+
+    <script>
+      const navLinks = document.querySelectorAll(".navigation__link");
+      const navToggle = document.querySelector(".navigation__checkbox");
+
+      navLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          navToggle.checked = false; // This closes the navigation
+        });
+      });
+
+      document.querySelectorAll(".navigation__link").forEach((link) => {
+        link.addEventListener("click", function (event) {
+          event.preventDefault();
+          const targetId = this.getAttribute("href").substring(1);
+          document
+            .getElementById(targetId)
+            .scrollIntoView({ behavior: "smooth" });
+        });
+      });
+
+      document
+        .getElementById("discover-tours-button")
+        .addEventListener("click", function (event) {
+          event.preventDefault(); // Prevent default jump behavior
+          document
+            .querySelector("#tours")
+            .scrollIntoView({ behavior: "smooth" });
+        });
+    </script>
   </body>
 </html>

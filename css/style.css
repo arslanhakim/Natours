@@ -71,7 +71,8 @@ html {
 body {
   box-sizing: border-box;
   padding: 3rem;
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  scroll-behavior: smooth; }
   @media (max-width: 56.25em) {
     body {
       padding: 0; } }
